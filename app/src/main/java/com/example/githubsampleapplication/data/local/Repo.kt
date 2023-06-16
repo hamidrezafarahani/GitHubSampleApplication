@@ -1,12 +1,12 @@
 package com.example.githubsampleapplication.data.local
 
 import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.PrimaryKey as PK
 import com.google.gson.annotations.SerializedName as SN
 
 @Entity(tableName = "repos")
 data class Repo(
-    @PrimaryKey @SN("id") val id: Long,
+    @SN("id") @PK val id: Long,
     @SN("name") val name: String,
     @SN("full_name") val fullName: String,
     @SN("description") val description: String?,
