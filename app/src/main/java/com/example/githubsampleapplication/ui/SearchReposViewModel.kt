@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import androidx.paging.insertSeparators
 import androidx.paging.map
 import com.example.githubsampleapplication.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -93,6 +94,24 @@ class SearchReposViewModel @Inject constructor(
         return repository.getSearchResult(query).map {
             it.map { repo ->
                 UiModel.RepoItem(repo)
+            }
+        }.map {
+            it.insertSeparators { before, after ->
+                if (after == null) {
+                    return@insertSeparators null
+                }
+                if (before == null) {
+                    return@insertSeparators UiModel.SeparatorItem("${after.roundedStarCount}0.000+ stars")
+                }
+                if (before.roundedStarCount > after.roundedStarCount) {
+                    if (after.roundedStarCount >= 1) {
+                        UiModel.SeparatorItem("${after.roundedStarCount}0.000+ stars")
+                    } else {
+                        UiModel.SeparatorItem("< 10.000+ stars")
+                    }
+                } else {
+                    null
+                }
             }
         }
     }
