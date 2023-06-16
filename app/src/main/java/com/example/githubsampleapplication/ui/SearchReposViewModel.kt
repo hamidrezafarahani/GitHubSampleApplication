@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import androidx.paging.map
 import com.example.githubsampleapplication.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -89,6 +90,10 @@ class SearchReposViewModel @Inject constructor(
     }
 
     private fun searchRepos(query: String): Flow<PagingData<UiModel>> {
-        TODO()
+        return repository.getSearchResult(query).map {
+            it.map { repo ->
+                UiModel.RepoItem(repo)
+            }
+        }
     }
 }
