@@ -53,9 +53,13 @@ class ReposAdapter : PagingDataAdapter<UiModel, ViewHolder>(DIFF_CALLBACK) {
                     it.context.startActivity(intent)
                 }
             }
+        }
+
+        fun bind(repo: Repo) {
+            this.repo = repo
 
             with(binding) {
-                with(repo!!) {
+                with(repo) {
                     repoName.text = fullName
 
                     var descriptionVisibility = View.GONE
@@ -77,10 +81,6 @@ class ReposAdapter : PagingDataAdapter<UiModel, ViewHolder>(DIFF_CALLBACK) {
                     repoLanguage.visibility = languageVisibility
                 }
             }
-        }
-
-        fun bind(repo: Repo) {
-            this.repo = repo
         }
 
         companion object {
