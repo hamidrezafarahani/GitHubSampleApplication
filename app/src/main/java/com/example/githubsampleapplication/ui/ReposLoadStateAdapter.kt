@@ -45,7 +45,7 @@ class ReposLoadStateAdapter(
         companion object {
             fun create(parent: ViewGroup, retry: () -> Unit): ReposLoadStateViewHolder {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.repos_load_state_footer_view_item, parent)
+                    .inflate(R.layout.repos_load_state_footer_view_item, parent, false)
                 val binding = ReposLoadStateFooterViewItemBinding.bind(view)
                 return ReposLoadStateViewHolder(binding, retry)
             }
