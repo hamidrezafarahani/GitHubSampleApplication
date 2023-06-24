@@ -89,7 +89,7 @@ object NetworkModule {
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://api.github.com/")
             .callFactory {
                 client.get().newCall(it)
             }
