@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.githubsampleapplication.R
 import com.example.githubsampleapplication.databinding.FragmentSearchReposBinding
 import com.example.githubsampleapplication.utils.log
-import com.example.githubsampleapplication.utils.viewBindings
+import com.example.githubsampleapplication.binding.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow

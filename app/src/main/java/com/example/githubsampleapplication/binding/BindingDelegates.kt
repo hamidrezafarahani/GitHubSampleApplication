@@ -1,4 +1,4 @@
-package com.example.githubsampleapplication.utils
+package com.example.githubsampleapplication.binding
 
 import android.view.View
 import androidx.databinding.ViewDataBinding
