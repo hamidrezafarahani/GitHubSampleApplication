@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.githubsampleapplication.R
-import com.example.githubsampleapplication.data.local.Repo
+import com.example.githubsampleapplication.data.local.entities.Repo
 import com.example.githubsampleapplication.databinding.RepoViewItemBinding
 import com.example.githubsampleapplication.databinding.SeparatorViewItemBinding
 
@@ -42,7 +41,7 @@ class ReposAdapter : PagingDataAdapter<UiModel, ViewHolder>(DIFF_CALLBACK) {
 
     class RepoViewHolder(
         private val binding: RepoViewItemBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
+    ) : ViewHolder(binding.root) {
 
         private var repo: Repo? = null
 
@@ -95,7 +94,7 @@ class ReposAdapter : PagingDataAdapter<UiModel, ViewHolder>(DIFF_CALLBACK) {
 
     class SeparatorViewHolder(
         private val binding: SeparatorViewItemBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
+    ) : ViewHolder(binding.root) {
 
         fun bind(description: String) = with(binding) {
             separatorDescription.text = description

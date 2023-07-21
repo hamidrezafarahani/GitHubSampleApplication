@@ -1,5 +1,6 @@
 package com.example.githubsampleapplication.data.remote
 
+import com.example.githubsampleapplication.data.remote.dtos.RepoSearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

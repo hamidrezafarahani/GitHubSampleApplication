@@ -6,9 +6,9 @@ import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import com.example.githubsampleapplication.data.local.DB
-import com.example.githubsampleapplication.data.local.RemoteKey
-import com.example.githubsampleapplication.data.local.RemoteKeyDao
-import com.example.githubsampleapplication.data.local.Repo
+import com.example.githubsampleapplication.data.local.entities.RemoteKey
+import com.example.githubsampleapplication.data.local.dao.RemoteKeyDao
+import com.example.githubsampleapplication.data.local.entities.Repo
 import com.example.githubsampleapplication.data.remote.GitHubService
 import timber.log.Timber
 

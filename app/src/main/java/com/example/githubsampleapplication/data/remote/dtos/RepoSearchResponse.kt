@@ -1,6 +1,6 @@
-package com.example.githubsampleapplication.data.remote
+package com.example.githubsampleapplication.data.remote.dtos
 
-import com.example.githubsampleapplication.data.local.Repo
+import com.example.githubsampleapplication.data.local.entities.Repo
 import com.google.gson.annotations.SerializedName as SN
 
 data class RepoSearchResponse(

@@ -1,10 +1,11 @@
-package com.example.githubsampleapplication.data.local
+package com.example.githubsampleapplication.data.local.dao
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.githubsampleapplication.data.local.entities.Repo
 
 @Dao
 interface RepoDao {

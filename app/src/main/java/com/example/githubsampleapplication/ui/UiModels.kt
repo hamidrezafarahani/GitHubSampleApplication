@@ -1,6 +1,6 @@
 package com.example.githubsampleapplication.ui
 
-import com.example.githubsampleapplication.data.local.Repo
+import com.example.githubsampleapplication.data.local.entities.Repo
 
 const val LAST_QUERY_SCROLLED: String = "last_query_scrolled"
 const val LAST_SEARCH_QUERY: String = "last_search_query"

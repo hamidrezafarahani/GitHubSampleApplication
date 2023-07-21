@@ -3,8 +3,8 @@ package com.example.githubsampleapplication.di
 import android.content.Context
 import androidx.room.Room
 import com.example.githubsampleapplication.data.local.DB
-import com.example.githubsampleapplication.data.local.RemoteKeyDao
-import com.example.githubsampleapplication.data.local.RepoDao
+import com.example.githubsampleapplication.data.local.dao.RemoteKeyDao
+import com.example.githubsampleapplication.data.local.dao.RepoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
