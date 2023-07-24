@@ -1,8 +1,8 @@
 package com.example.githubsampleapplication.di
 
 import android.app.Application
+import com.example.githubsampleapplication.BuildConfig
 import com.example.githubsampleapplication.data.remote.GitHubService
-import com.facebook.shimmer.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -51,7 +51,7 @@ object NetworkModule {
             }.build()
             val request = it.request().newBuilder()
                 .url(url)
-                /*.addHeader("Authorization", "Bearer ....")*/
+                .addHeader("Authorization", "Bearer ${BuildConfig.TOKEN}")
                 .build()
             it.proceed(request)
         }
